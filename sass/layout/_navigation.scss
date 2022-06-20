@@ -1,0 +1,137 @@
+.navigation{
+  
+
+
+  &__checkbox{
+    display: none;
+  }
+  &__button{
+    width: 7rem;
+    aspect-ratio: 1;
+    background-color: $color-white;
+    z-index: 200;
+    border-radius: 50%;
+    position: fixed;
+    box-shadow: 0 1rem 3rem rgba($color-grey-dark-3, 0.3);
+    top: 6rem;
+    right: 6rem;
+    text-align: center;
+    
+  }
+
+  &__icon{
+    position: relative;
+    margin-top: 3.5rem;
+    
+
+    &,
+    &::before,
+    &::after{
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+    &::before,
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    &::before{
+      top: -1rem;
+
+    }
+    &::after  {
+      top: 1rem;
+    }
+
+
+  }
+
+  &__background{
+    width: 6rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: fixed;
+    //ne right bn topni kam berdik
+    right: 6.5rem;
+    top: 6.5rem;
+    background-image: radial-gradient($color-primary-light,
+    $color-primary-dark);
+    z-index: 150;
+    transition: all .3s;
+    
+  }
+
+  &__nav{
+    width: 0%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 170;
+    opacity: 0;
+    display: none;
+    //ishlamadi
+    transition: all 2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    
+
+  }
+  &__list{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+    list-style: none;
+  }
+  &__item{
+
+  }
+  &__link{
+    font-size: 3rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: $color-white;
+    text-transform: uppercase;
+    background-image: linear-gradient(120deg, transparent 50%, $color-white 50%);
+    // nega 220%
+    background-size: 220%;
+    padding: 1rem 2rem;
+    display: block;
+    transition: all .4s;
+    &:hover{
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+  }
+
+
+
+  &__checkbox:checked ~ &__background { 
+    transform: scale(80);
+  }
+  &__checkbox:checked ~ &__nav{
+    opacity: 1;
+    width: 100%;
+    display: block;
+  }
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  } 
+  &__checkbox:checked + &__button &__icon::before {
+    transform: rotate(-135deg);
+    //savol qaysi oqda aylanvoti
+    top: 0;
+    //nega top 0
+  } 
+  &__checkbox:checked + &__button &__icon::after {
+    transform: rotate(135deg);
+    //savol qaysi oqda aylanvoti
+    top: 0;
+    //nega top 0
+  } 
+  // shuni transitioni qaysingaligini topish kere
+}

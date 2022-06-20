@@ -1,0 +1,21 @@
+.features-box{
+  background-color: rgba($color-white, 0.8);
+  font-size: $default-font-size;
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4 rgba($color-black, 0.2);
+  &__icons{
+    font-size: 6rem;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+  &:hover{
+    transform:scale(1.1) translateY(-2rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+// ctrl+c ==> control + c mac 

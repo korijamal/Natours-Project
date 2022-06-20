@@ -1,0 +1,50 @@
+body{
+  font-family: "Lato", sans-serif;
+}
+.heading-primary {
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.7rem;
+  margin-bottom: 2rem;
+  // savol class yozilishiga shunmadim //
+  &--main {
+    animation-name: Move-left;
+    animation-duration: 2s;
+    animation-direction: left;
+    animation-timing-function: ease-out;
+    display: block;
+    font-size: 7rem;
+  }
+  &--sub {
+    display: block;
+    font-size: 1.75rem;
+    animation-name: Move-right;
+    animation-duration: 2s;
+    animation-direction: right;
+    animation-timing-function: ease-out;
+  }
+}
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  //srew here yoziladi
+}
+.heading-tertiary{
+  text-transform: uppercase;
+  font-size: $default-font-size;
+  font-weight: 700;
+ 
+}
+.paragraph{
+  font-size: $default-font-size;
+  //no child
+  &:not(:last-child){
+    margin-bottom: 3rem;
+  }
+}
